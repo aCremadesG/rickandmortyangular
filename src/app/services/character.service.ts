@@ -19,7 +19,11 @@ export class CharacterService {
   }
 
   async getCharacter(id: string){
-    return await lastValueFrom(this.http.get(this.apiURL+'/api/character'+id));
+    return await lastValueFrom(this.http.get(this.apiURL+'/api/character/'+id));
+  }
+
+  async getMultipleCharacters(ids: string){
+    return await lastValueFrom(this.http.get(this.apiURL+'/api/character/'+ids));
   }
 
   // async filterCharacters(filters){
